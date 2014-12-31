@@ -1,0 +1,5 @@
+#!/usr/bin/env bash
+
+set -o pipefail
+
+xcodebuild test -workspace light-room-ios.xcworkspace -scheme light-room-ios -sdk iphonesimulator BUILD_ACTIVE_ARCH=NO | xcpretty -t -c
