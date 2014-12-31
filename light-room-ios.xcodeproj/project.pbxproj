@@ -7,12 +7,16 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		2C7FCD8397AADA6B3E70FAA1 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 44C1D8C34E7DE68D701D972A /* Foundation.framework */; };
 		6CFB3EC54079BFFA933BF822 /* libPods-unit_tests.a in Frameworks */ = {isa = PBXBuildFile; fileRef = FA68372B3DB61B2090DB17A0 /* libPods-unit_tests.a */; };
 		91351D86BFD30C1614F53D0A /* LaunchScreen.xib in Sources */ = {isa = PBXBuildFile; fileRef = 3A07DED7896948890E305506 /* LaunchScreen.xib */; };
 		AF22DAF34271947FF57AE729 /* Main.storyboard in Sources */ = {isa = PBXBuildFile; fileRef = 72456D6413C2F459E6E26E10 /* Main.storyboard */; };
 		DCA0AC21ECDE91E07E35E583 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 58243E7AAB8474F7C3AD580C /* AppDelegate.swift */; };
 		E8EBBDC2ACE8C515FABE156A /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B6E4C7E6465F95D18A2A2CAE /* Images.xcassets */; };
+		EA395DDC1A545B4E00EB607E /* DiscoveryManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA395DDB1A545B4E00EB607E /* DiscoveryManager.swift */; };
+		EA395DDE1A5480E700EB607E /* ImageCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA395DDD1A5480E700EB607E /* ImageCell.swift */; };
+		EA395DE01A54829500EB607E /* TextureViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA395DDF1A54829500EB607E /* TextureViewController.swift */; };
+		EA395DE21A5484DA00EB607E /* LightRoomClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA395DE11A5484DA00EB607E /* LightRoomClient.swift */; };
+		EA395DE41A54895500EB607E /* WhiteViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA395DE31A54895500EB607E /* WhiteViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -37,6 +41,11 @@
 		B6E4C7E6465F95D18A2A2CAE /* Images.xcassets */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
 		C9A5E255AB95BACAA0FF6B5E /* UnitTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = UnitTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		E7C5500970C535DAE5E4229C /* Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		EA395DDB1A545B4E00EB607E /* DiscoveryManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DiscoveryManager.swift; sourceTree = "<group>"; };
+		EA395DDD1A5480E700EB607E /* ImageCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ImageCell.swift; sourceTree = "<group>"; };
+		EA395DDF1A54829500EB607E /* TextureViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TextureViewController.swift; sourceTree = "<group>"; };
+		EA395DE11A5484DA00EB607E /* LightRoomClient.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LightRoomClient.swift; sourceTree = "<group>"; };
+		EA395DE31A54895500EB607E /* WhiteViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WhiteViewController.swift; sourceTree = "<group>"; };
 		FA68372B3DB61B2090DB17A0 /* libPods-unit_tests.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-unit_tests.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
@@ -45,7 +54,6 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				2C7FCD8397AADA6B3E70FAA1 /* Foundation.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -77,6 +85,8 @@
 		09DCCF75EED9AF75CB71EA16 /* Models */ = {
 			isa = PBXGroup;
 			children = (
+				EA395DDB1A545B4E00EB607E /* DiscoveryManager.swift */,
+				EA395DE11A5484DA00EB607E /* LightRoomClient.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -198,6 +208,8 @@
 			isa = PBXGroup;
 			children = (
 				58243E7AAB8474F7C3AD580C /* AppDelegate.swift */,
+				EA395DDF1A54829500EB607E /* TextureViewController.swift */,
+				EA395DE31A54895500EB607E /* WhiteViewController.swift */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";
@@ -229,6 +241,7 @@
 		E91D2268C3FF1F071EC91822 /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				EA395DDD1A5480E700EB607E /* ImageCell.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -256,9 +269,9 @@
 			productReference = C9A5E255AB95BACAA0FF6B5E /* UnitTests.xctest */;
 			productType = "com.apple.product-type.bundle.unit-test";
 		};
-		50879EFE5389BEAA25FF0FBD /* light-room-ios */ = {
+		50879EFE5389BEAA25FF0FBD /* light-room */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 88DC7EBCB224557698F15F4E /* Build configuration list for PBXNativeTarget "light-room-ios" */;
+			buildConfigurationList = 88DC7EBCB224557698F15F4E /* Build configuration list for PBXNativeTarget "light-room" */;
 			buildPhases = (
 				DA967094C5CFC060255B9D3D /* Sources */,
 				0CD1826A5B804D49CFBC7160 /* Frameworks */,
@@ -269,7 +282,7 @@
 			);
 			dependencies = (
 			);
-			name = "light-room-ios";
+			name = "light-room";
 			productName = "light-room-ios";
 			productReference = 51BE21293C33AE74A94E15BF /* light-room-ios.app */;
 			productType = "com.apple.product-type.application";
@@ -296,7 +309,7 @@
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				50879EFE5389BEAA25FF0FBD /* light-room-ios */,
+				50879EFE5389BEAA25FF0FBD /* light-room */,
 				204CA0CB3EC605FE13BDED5C /* UnitTests */,
 			);
 		};
@@ -374,7 +387,12 @@
 			files = (
 				DCA0AC21ECDE91E07E35E583 /* AppDelegate.swift in Sources */,
 				AF22DAF34271947FF57AE729 /* Main.storyboard in Sources */,
+				EA395DE01A54829500EB607E /* TextureViewController.swift in Sources */,
 				91351D86BFD30C1614F53D0A /* LaunchScreen.xib in Sources */,
+				EA395DE41A54895500EB607E /* WhiteViewController.swift in Sources */,
+				EA395DE21A5484DA00EB607E /* LightRoomClient.swift in Sources */,
+				EA395DDC1A545B4E00EB607E /* DiscoveryManager.swift in Sources */,
+				EA395DDE1A5480E700EB607E /* ImageCell.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -390,7 +408,7 @@
 /* Begin PBXTargetDependency section */
 		C15EF568E26041199BC0F64A /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
-			target = 50879EFE5389BEAA25FF0FBD /* light-room-ios */;
+			target = 50879EFE5389BEAA25FF0FBD /* light-room */;
 			targetProxy = A66D5D9ED53375E6ACDA1498 /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
@@ -597,7 +615,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		88DC7EBCB224557698F15F4E /* Build configuration list for PBXNativeTarget "light-room-ios" */ = {
+		88DC7EBCB224557698F15F4E /* Build configuration list for PBXNativeTarget "light-room" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				D53E300905557ADD34348D3C /* Release */,
