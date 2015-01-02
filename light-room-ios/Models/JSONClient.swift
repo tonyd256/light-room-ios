@@ -5,26 +5,18 @@ import Argo
 class JSONClient {
   let client = NetworkClient()
 
-  func performRequest(request: NSURLRequest, callback: Result<JSONResponse> -> ()) {
-    client.performRequest(request) { result in
-      switch result {
-      case let .Failure(error): callback(failure(error))
-      case let .Success(response): callback(success(JSONResponse(response: response.unbox)))
-      }
-    }
+  func performRequest(request: NSURLRequest, callback: Result<JSONValue> -> ()) {
+    client.performRequest(request) { callback(JSONValue.parse <^> $0 >>- dataToJSON) }
   }
 }
 
-struct JSONResponse {
-  let json: JSONValue?
-  let status: Int = 500
+private func dataToJSON(data: NSData) -> Result<AnyObject> {
+  var error: NSError?
+  let obj: AnyObject? = NSJSONSerialization.JSONObjectWithData(data, options: NSJSONReadingOptions(0), error: &error)
 
-  init(response: NetworkResponse) {
-    status = response.status
-    json = response.data >>- dataToJSON >>- JSONValue.parse
+  if let err = error {
+    return failure(err)
   }
-}
 
-private func dataToJSON(data: NSData) -> AnyObject? {
-  return NSJSONSerialization.JSONObjectWithData(data, options: NSJSONReadingOptions(0), error: nil)
+  return success(obj ?? [:])
 }

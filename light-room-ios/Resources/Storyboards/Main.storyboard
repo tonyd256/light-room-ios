@@ -74,7 +74,7 @@
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <slider opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" minValue="0.0" maxValue="1" translatesAutoresizingMaskIntoConstraints="NO" id="n6b-hH-8pX">
+                            <slider opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" minValue="0.0" maxValue="100" translatesAutoresizingMaskIntoConstraints="NO" id="n6b-hH-8pX">
                                 <rect key="frame" x="34" y="285" width="532" height="31"/>
                                 <connections>
                                     <action selector="levelChanged:" destination="QIQ-rf-dV4" eventType="valueChanged" id="VOc-pf-kBx"/>
@@ -104,7 +104,42 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="OSq-bR-oZr" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1517" y="1046"/>
+            <point key="canvasLocation" x="1517" y="1029"/>
+        </scene>
+        <!--Discovery View Controller-->
+        <scene sceneID="pC4-HH-KnS">
+            <objects>
+                <viewController storyboardIdentifier="DiscoveryViewController" id="GrG-lT-eJ2" customClass="DiscoveryViewController" customModule="light_room" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="x4J-CM-A7F"/>
+                        <viewControllerLayoutGuide type="bottom" id="sDX-TS-Ade"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="x8j-3N-XUD">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <activityIndicatorView opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" animating="YES" style="gray" translatesAutoresizingMaskIntoConstraints="NO" id="UFH-VH-r65">
+                                <rect key="frame" x="290" y="290" width="20" height="20"/>
+                            </activityIndicatorView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Searching for Light Room ..." lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="bri-Cv-xkk">
+                                <rect key="frame" x="192" y="253" width="216" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstAttribute="centerX" secondItem="UFH-VH-r65" secondAttribute="centerX" id="D9f-FE-MAt"/>
+                            <constraint firstItem="UFH-VH-r65" firstAttribute="top" secondItem="bri-Cv-xkk" secondAttribute="bottom" constant="16" id="UVl-zL-h15"/>
+                            <constraint firstAttribute="centerY" secondItem="UFH-VH-r65" secondAttribute="centerY" id="WZc-kP-3yQ"/>
+                            <constraint firstAttribute="centerX" secondItem="bri-Cv-xkk" secondAttribute="centerX" id="cDC-iP-dtN"/>
+                        </constraints>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="YFM-xu-Ljl" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="852" y="678"/>
         </scene>
         <!--Tab Bar Controller-->
         <scene sceneID="sY0-ru-xZi">

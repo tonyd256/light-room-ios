@@ -1,12 +1,13 @@
 import Foundation
 import UIKit.UIImage
 import Argo
+import LlamaKit
 
 class LightRoomClient {
-  private let manager = DiscoveryManager()
   private let requestQueue = NSOperationQueue()
-  private let client = JSONClient()
-  private var host: String?
+  private let jsonClient = JSONClient()
+  private let networkClient = NetworkClient()
+  private var requestFactory: RequestFactory?
 
   class var sharedClient: LightRoomClient {
     struct Static {
@@ -15,53 +16,65 @@ class LightRoomClient {
     return Static.instance
   }
 
+  var isConnected: Bool {
+    if let _ = requestFactory {
+      return true
+    } else {
+      return false
+    }
+  }
+
   private init() {
-    manager.startBrowsing(setHost)
     requestQueue.maxConcurrentOperationCount = 1
     requestQueue.qualityOfService = .UserInitiated
     requestQueue.name = "LightRoomClientQueue"
   }
 
   func setHost(host: String) {
-    self.host = host
+    NSURL(string: "\(host):3000").map {
+      self.requestFactory = RequestFactory(host: $0)
+    }
   }
 }
 
 extension LightRoomClient {
-  func getTextures(callback: [String] -> ()) {
-    let request: NSURLRequest? = host.map { NSURL(string: "\($0)/textures").map { NSURLRequest(URL: $0) } } ?? .None
-    request.map { self.client.performRequest($0) { r in onMain { callback(r.value() >>- { $0.json >>- JSONValue.map } ?? []) } } }
+  func getTextures(callback: Result<[String]> -> ()) {
+    requestQueue.addOperationWithBlock { [unowned self] in
+      _ = curry(self.jsonClient.performRequest) <^> self.requestFactory?.listTexturesRequest() <*> {
+        onMain(callback, $0 >>- { toResult(JSONValue.map($0)) })
+      }
+    }
   }
 
-  func getTexture(name: String, callback: UIImage -> ()) {
-    let client = NetworkClient()
-    let request: NSURLRequest? = host.map { NSURL(string: "\($0)/images/\(name).jpeg").map { NSURLRequest(URL: $0) } } ?? .None
-    request.map { client.performRequest($0) { r in onMain { callback(r.value() >>- { $0.data >>- {UIImage(data: $0)} } ?? UIImage()) } } }
+  func getTexture(name: String, callback: Result<UIImage> -> ()) {
+    requestQueue.addOperationWithBlock { [unowned self] in
+      _ = curry(self.networkClient.performRequest) <^> self.requestFactory?.fetchTextureRequest(name) <*> {
+        onMain(callback, $0 >>- { toResult(UIImage(data: $0)) })
+      }
+    }
   }
 
   func playTexture(name: String, callback: () -> ()) {
-    let client = NetworkClient()
-    let request: NSMutableURLRequest? = host.map { NSURL(string: "\($0)/commands").map { NSMutableURLRequest(URL: $0) } } ?? .None
     let json = ["command": "texture", "name": name]
-    let data = NSJSONSerialization.dataWithJSONObject(json, options: NSJSONWritingOptions(0), error: nil)
-    request?.HTTPBody = data
-    request?.HTTPMethod = "POST"
-    request.map { client.performRequest($0) { _ in onMain(callback) } }
+    requestQueue.addOperationWithBlock { [unowned self] in
+      _ = curry(self.jsonClient.performRequest) <^> self.requestFactory?.postCommandRequest(json) <*> { _ in
+        onMain(callback, ())
+      }
+    }
   }
 }
 
 extension LightRoomClient {
-  func setWhiteLevel(level: Double, callback: () -> ()) {
-    let client = NetworkClient()
-    let request: NSMutableURLRequest? = host.map { NSURL(string: "\($0)/commands").map { NSMutableURLRequest(URL: $0) } } ?? .None
-    let json = ["command": "white", "level": level]
-    let data = NSJSONSerialization.dataWithJSONObject(json, options: NSJSONWritingOptions(0), error: nil)
-    request?.HTTPBody = data
-    request?.HTTPMethod = "POST"
-    request.map { client.performRequest($0) { _ in onMain(callback) } }
+  func setWhiteLevel(level: Int, callback: () -> ()) {
+    let json: [String: AnyObject] = ["command": "white", "level": level]
+    requestQueue.addOperationWithBlock { [unowned self] in
+      _ = curry(self.jsonClient.performRequest) <^> self.requestFactory?.postCommandRequest(json) <*> { _ in
+        onMain(callback, ())
+      }
+    }
   }
 }
 
-private func onMain(f: () -> ()) {
-  dispatch_async(dispatch_get_main_queue(), f)
+private func onMain<T>(f: T -> (), t: T) {
+  dispatch_async(dispatch_get_main_queue()) { f(t) }
 }

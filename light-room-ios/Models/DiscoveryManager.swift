@@ -1,7 +1,6 @@
 import Foundation
 
-//private let LightRoomServerHostName = "light-room.local."
-private let LightRoomServerHostName = "Tonys-MacBook-Pro-3.local."
+private let LightRoomServerHostName = "light-room.local."
 
 class DiscoveryManager: NSObject, NSNetServiceBrowserDelegate, NSNetServiceDelegate {
   let browser = NSNetServiceBrowser()

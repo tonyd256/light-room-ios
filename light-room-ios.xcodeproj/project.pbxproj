@@ -16,6 +16,10 @@
 		EA395DE01A54829500EB607E /* TextureViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA395DDF1A54829500EB607E /* TextureViewController.swift */; };
 		EA395DE21A5484DA00EB607E /* LightRoomClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA395DE11A5484DA00EB607E /* LightRoomClient.swift */; };
 		EA395DE41A54895500EB607E /* WhiteViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA395DE31A54895500EB607E /* WhiteViewController.swift */; };
+		EA395DF21A56EE2F00EB607E /* RequestFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA395DF11A56EE2F00EB607E /* RequestFactory.swift */; };
+		EA395DFD1A56F4FB00EB607E /* Result.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA395DFC1A56F4FB00EB607E /* Result.swift */; };
+		EA395DFF1A56FDE500EB607E /* curry.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA395DFE1A56FDE500EB607E /* curry.swift */; };
+		EA395E011A57239C00EB607E /* DiscoveryViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA395E001A57239C00EB607E /* DiscoveryViewController.swift */; };
 		EAAC00DC1A560467004205FB /* NetworkClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = EAAC00DB1A560467004205FB /* NetworkClient.swift */; };
 		EAAC00DE1A5605DA004205FB /* JSONClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = EAAC00DD1A5605DA004205FB /* JSONClient.swift */; };
 		EAAC00FD1A560686004205FB /* Argo.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EAAC00F61A56063D004205FB /* Argo.framework */; };
@@ -104,6 +108,10 @@
 		EA395DDF1A54829500EB607E /* TextureViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TextureViewController.swift; sourceTree = "<group>"; };
 		EA395DE11A5484DA00EB607E /* LightRoomClient.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LightRoomClient.swift; sourceTree = "<group>"; };
 		EA395DE31A54895500EB607E /* WhiteViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WhiteViewController.swift; sourceTree = "<group>"; };
+		EA395DF11A56EE2F00EB607E /* RequestFactory.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RequestFactory.swift; sourceTree = "<group>"; };
+		EA395DFC1A56F4FB00EB607E /* Result.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Result.swift; sourceTree = "<group>"; };
+		EA395DFE1A56FDE500EB607E /* curry.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = curry.swift; sourceTree = "<group>"; };
+		EA395E001A57239C00EB607E /* DiscoveryViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DiscoveryViewController.swift; sourceTree = "<group>"; };
 		EAAC00DB1A560467004205FB /* NetworkClient.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NetworkClient.swift; sourceTree = "<group>"; };
 		EAAC00DD1A5605DA004205FB /* JSONClient.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = JSONClient.swift; sourceTree = "<group>"; };
 		EAAC00DF1A560637004205FB /* LlamaKit.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = LlamaKit.xcodeproj; path = Carthage/Checkouts/LlamaKit/LlamaKit.xcodeproj; sourceTree = "<group>"; };
@@ -151,6 +159,7 @@
 				EA395DE11A5484DA00EB607E /* LightRoomClient.swift */,
 				EAAC00DB1A560467004205FB /* NetworkClient.swift */,
 				EAAC00DD1A5605DA004205FB /* JSONClient.swift */,
+				EA395DF11A56EE2F00EB607E /* RequestFactory.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -165,6 +174,7 @@
 		153AF1D4C01E5A2129E4BF6A /* light-room-ios */ = {
 			isa = PBXGroup;
 			children = (
+				EA395DFB1A56F4C000EB607E /* Globals */,
 				5803A5B76C8901AC2D40518E /* Extensions */,
 				BE64218C98477D5518E48A12 /* Protocols */,
 				09DCCF75EED9AF75CB71EA16 /* Models */,
@@ -266,6 +276,7 @@
 				58243E7AAB8474F7C3AD580C /* AppDelegate.swift */,
 				EA395DDF1A54829500EB607E /* TextureViewController.swift */,
 				EA395DE31A54895500EB607E /* WhiteViewController.swift */,
+				EA395E001A57239C00EB607E /* DiscoveryViewController.swift */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";
@@ -300,6 +311,15 @@
 				EA395DDD1A5480E700EB607E /* ImageCell.swift */,
 			);
 			path = Views;
+			sourceTree = "<group>";
+		};
+		EA395DFB1A56F4C000EB607E /* Globals */ = {
+			isa = PBXGroup;
+			children = (
+				EA395DFC1A56F4FB00EB607E /* Result.swift */,
+				EA395DFE1A56FDE500EB607E /* curry.swift */,
+			);
+			name = Globals;
 			sourceTree = "<group>";
 		};
 		EAAC00E01A560637004205FB /* Products */ = {
@@ -500,11 +520,15 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				EA395DF21A56EE2F00EB607E /* RequestFactory.swift in Sources */,
 				DCA0AC21ECDE91E07E35E583 /* AppDelegate.swift in Sources */,
 				AF22DAF34271947FF57AE729 /* Main.storyboard in Sources */,
+				EA395E011A57239C00EB607E /* DiscoveryViewController.swift in Sources */,
 				EA395DE01A54829500EB607E /* TextureViewController.swift in Sources */,
 				91351D86BFD30C1614F53D0A /* LaunchScreen.xib in Sources */,
 				EA395DE41A54895500EB607E /* WhiteViewController.swift in Sources */,
+				EA395DFF1A56FDE500EB607E /* curry.swift in Sources */,
+				EA395DFD1A56F4FB00EB607E /* Result.swift in Sources */,
 				EAAC00DC1A560467004205FB /* NetworkClient.swift in Sources */,
 				EA395DE21A5484DA00EB607E /* LightRoomClient.swift in Sources */,
 				EA395DDC1A545B4E00EB607E /* DiscoveryManager.swift in Sources */,
