@@ -7,7 +7,6 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		6CFB3EC54079BFFA933BF822 /* libPods-unit_tests.a in Frameworks */ = {isa = PBXBuildFile; fileRef = FA68372B3DB61B2090DB17A0 /* libPods-unit_tests.a */; };
 		91351D86BFD30C1614F53D0A /* LaunchScreen.xib in Sources */ = {isa = PBXBuildFile; fileRef = 3A07DED7896948890E305506 /* LaunchScreen.xib */; };
 		AF22DAF34271947FF57AE729 /* Main.storyboard in Sources */ = {isa = PBXBuildFile; fileRef = 72456D6413C2F459E6E26E10 /* Main.storyboard */; };
 		DCA0AC21ECDE91E07E35E583 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 58243E7AAB8474F7C3AD580C /* AppDelegate.swift */; };
@@ -17,6 +16,10 @@
 		EA395DE01A54829500EB607E /* TextureViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA395DDF1A54829500EB607E /* TextureViewController.swift */; };
 		EA395DE21A5484DA00EB607E /* LightRoomClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA395DE11A5484DA00EB607E /* LightRoomClient.swift */; };
 		EA395DE41A54895500EB607E /* WhiteViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA395DE31A54895500EB607E /* WhiteViewController.swift */; };
+		EAAC00DC1A560467004205FB /* NetworkClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = EAAC00DB1A560467004205FB /* NetworkClient.swift */; };
+		EAAC00DE1A5605DA004205FB /* JSONClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = EAAC00DD1A5605DA004205FB /* JSONClient.swift */; };
+		EAAC00FD1A560686004205FB /* Argo.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EAAC00F61A56063D004205FB /* Argo.framework */; };
+		EAAC00FE1A560686004205FB /* LlamaKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EAAC00E71A560637004205FB /* LlamaKit.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -27,6 +30,62 @@
 			remoteGlobalIDString = 50879EFE5389BEAA25FF0FBD;
 			remoteInfo = "light-room-ios";
 		};
+		EAAC00E61A560637004205FB /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = EAAC00DF1A560637004205FB /* LlamaKit.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = FB2F8D8119BF637B00E4C49E;
+			remoteInfo = "LlamaKit-iOS";
+		};
+		EAAC00E81A560637004205FB /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = EAAC00DF1A560637004205FB /* LlamaKit.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = FB2F8D8C19BF637B00E4C49E;
+			remoteInfo = "LlamaKit-iOSTests";
+		};
+		EAAC00EA1A560637004205FB /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = EAAC00DF1A560637004205FB /* LlamaKit.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = D0297D1019D67999009986A9;
+			remoteInfo = "LlamaKit-Mac";
+		};
+		EAAC00EC1A560637004205FB /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = EAAC00DF1A560637004205FB /* LlamaKit.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = D0297D1A19D67999009986A9;
+			remoteInfo = "LlamaKit-MacTests";
+		};
+		EAAC00F51A56063D004205FB /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = EAAC00EE1A56063D004205FB /* Argo.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = EAD9FACF19D0EAB50031E006;
+			remoteInfo = "Argo-iOS";
+		};
+		EAAC00F71A56063D004205FB /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = EAAC00EE1A56063D004205FB /* Argo.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = EAD9FADA19D0EAB60031E006;
+			remoteInfo = ArgoTests;
+		};
+		EAAC00F91A56063D004205FB /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = EAAC00EE1A56063D004205FB /* Argo.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = F89335541A4CE83000B88685;
+			remoteInfo = "Argo-Mac";
+		};
+		EAAC00FB1A56063D004205FB /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = EAAC00EE1A56063D004205FB /* Argo.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = F893355E1A4CE83000B88685;
+			remoteInfo = "Argo-MacTests";
+		};
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
@@ -34,8 +93,7 @@
 		3A07DED7896948890E305506 /* LaunchScreen.xib */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = file.xib; path = LaunchScreen.xib; sourceTree = "<group>"; };
 		3A21B47B1ED0C23BD5F42FBD /* UnitTests-Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "UnitTests-Info.plist"; sourceTree = "<group>"; };
 		3FA330DB413F15DFE1F58011 /* Pods-unit_tests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-unit_tests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-unit_tests/Pods-unit_tests.debug.xcconfig"; sourceTree = "<group>"; };
-		44C1D8C34E7DE68D701D972A /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS7.1.sdk/System/Library/Frameworks/Foundation.framework; sourceTree = DEVELOPER_DIR; };
-		51BE21293C33AE74A94E15BF /* light-room-ios.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "light-room-ios.app"; sourceTree = BUILT_PRODUCTS_DIR; };
+		51BE21293C33AE74A94E15BF /* light-room.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "light-room.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		58243E7AAB8474F7C3AD580C /* AppDelegate.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		72456D6413C2F459E6E26E10 /* Main.storyboard */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = file.storyboard; path = Main.storyboard; sourceTree = "<group>"; };
 		B6E4C7E6465F95D18A2A2CAE /* Images.xcassets */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
@@ -46,7 +104,10 @@
 		EA395DDF1A54829500EB607E /* TextureViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TextureViewController.swift; sourceTree = "<group>"; };
 		EA395DE11A5484DA00EB607E /* LightRoomClient.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LightRoomClient.swift; sourceTree = "<group>"; };
 		EA395DE31A54895500EB607E /* WhiteViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WhiteViewController.swift; sourceTree = "<group>"; };
-		FA68372B3DB61B2090DB17A0 /* libPods-unit_tests.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-unit_tests.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		EAAC00DB1A560467004205FB /* NetworkClient.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NetworkClient.swift; sourceTree = "<group>"; };
+		EAAC00DD1A5605DA004205FB /* JSONClient.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = JSONClient.swift; sourceTree = "<group>"; };
+		EAAC00DF1A560637004205FB /* LlamaKit.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = LlamaKit.xcodeproj; path = Carthage/Checkouts/LlamaKit/LlamaKit.xcodeproj; sourceTree = "<group>"; };
+		EAAC00EE1A56063D004205FB /* Argo.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = Argo.xcodeproj; path = Carthage/Checkouts/Argo/Argo.xcodeproj; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -54,6 +115,8 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				EAAC00FD1A560686004205FB /* Argo.framework in Frameworks */,
+				EAAC00FE1A560686004205FB /* LlamaKit.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -61,7 +124,6 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				6CFB3EC54079BFFA933BF822 /* libPods-unit_tests.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -87,6 +149,8 @@
 			children = (
 				EA395DDB1A545B4E00EB607E /* DiscoveryManager.swift */,
 				EA395DE11A5484DA00EB607E /* LightRoomClient.swift */,
+				EAAC00DB1A560467004205FB /* NetworkClient.swift */,
+				EAAC00DD1A5605DA004205FB /* JSONClient.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -110,14 +174,6 @@
 				4EF8FF6D51BF98A444A3C8C5 /* Resources */,
 			);
 			path = "light-room-ios";
-			sourceTree = "<group>";
-		};
-		16EC57EAD349D24BD1F0E973 /* iOS */ = {
-			isa = PBXGroup;
-			children = (
-				44C1D8C34E7DE68D701D972A /* Foundation.framework */,
-			);
-			name = iOS;
 			sourceTree = "<group>";
 		};
 		24C3DCD64B521F03A8F51BC0 /* Pods */ = {
@@ -148,7 +204,7 @@
 		2EAFA75E947E0DF341F835D1 /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				51BE21293C33AE74A94E15BF /* light-room-ios.app */,
+				51BE21293C33AE74A94E15BF /* light-room.app */,
 				C9A5E255AB95BACAA0FF6B5E /* UnitTests.xctest */,
 			);
 			name = Products;
@@ -157,8 +213,8 @@
 		48F92726D72B3C30CB70BAF2 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
-				16EC57EAD349D24BD1F0E973 /* iOS */,
-				FA68372B3DB61B2090DB17A0 /* libPods-unit_tests.a */,
+				EAAC00EE1A56063D004205FB /* Argo.xcodeproj */,
+				EAAC00DF1A560637004205FB /* LlamaKit.xcodeproj */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -246,6 +302,28 @@
 			path = Views;
 			sourceTree = "<group>";
 		};
+		EAAC00E01A560637004205FB /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				EAAC00E71A560637004205FB /* LlamaKit.framework */,
+				EAAC00E91A560637004205FB /* LlamaKit-iOSTests.xctest */,
+				EAAC00EB1A560637004205FB /* LlamaKit.framework */,
+				EAAC00ED1A560637004205FB /* LlamaKit-MacTests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		EAAC00EF1A56063D004205FB /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				EAAC00F61A56063D004205FB /* Argo.framework */,
+				EAAC00F81A56063D004205FB /* ArgoTests.xctest */,
+				EAAC00FA1A56063D004205FB /* Argo.framework */,
+				EAAC00FC1A56063D004205FB /* Argo-MacTests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -253,11 +331,9 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 3131C0C59F3B01137B80EAA2 /* Build configuration list for PBXNativeTarget "UnitTests" */;
 			buildPhases = (
-				73BA219735DD41EF539158F9 /* Check Pods Manifest.lock */,
 				DF3ACBDC5D871648BD3AFFCE /* Sources */,
 				4DFAF20B23CBA059CBE10CAB /* Frameworks */,
 				F27F4DFB50FA79CFC8C9550D /* Resources */,
-				F26788BC5C9D1E90A13AA61B /* Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -284,7 +360,7 @@
 			);
 			name = "light-room";
 			productName = "light-room-ios";
-			productReference = 51BE21293C33AE74A94E15BF /* light-room-ios.app */;
+			productReference = 51BE21293C33AE74A94E15BF /* light-room.app */;
 			productType = "com.apple.product-type.application";
 		};
 /* End PBXNativeTarget section */
@@ -307,6 +383,16 @@
 			mainGroup = 07861FBD8576455B41EF135C;
 			productRefGroup = 2EAFA75E947E0DF341F835D1 /* Products */;
 			projectDirPath = "";
+			projectReferences = (
+				{
+					ProductGroup = EAAC00EF1A56063D004205FB /* Products */;
+					ProjectRef = EAAC00EE1A56063D004205FB /* Argo.xcodeproj */;
+				},
+				{
+					ProductGroup = EAAC00E01A560637004205FB /* Products */;
+					ProjectRef = EAAC00DF1A560637004205FB /* LlamaKit.xcodeproj */;
+				},
+			);
 			projectRoot = "";
 			targets = (
 				50879EFE5389BEAA25FF0FBD /* light-room */,
@@ -314,6 +400,65 @@
 			);
 		};
 /* End PBXProject section */
+
+/* Begin PBXReferenceProxy section */
+		EAAC00E71A560637004205FB /* LlamaKit.framework */ = {
+			isa = PBXReferenceProxy;
+			fileType = wrapper.framework;
+			path = LlamaKit.framework;
+			remoteRef = EAAC00E61A560637004205FB /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		EAAC00E91A560637004205FB /* LlamaKit-iOSTests.xctest */ = {
+			isa = PBXReferenceProxy;
+			fileType = wrapper.cfbundle;
+			path = "LlamaKit-iOSTests.xctest";
+			remoteRef = EAAC00E81A560637004205FB /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		EAAC00EB1A560637004205FB /* LlamaKit.framework */ = {
+			isa = PBXReferenceProxy;
+			fileType = wrapper.framework;
+			path = LlamaKit.framework;
+			remoteRef = EAAC00EA1A560637004205FB /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		EAAC00ED1A560637004205FB /* LlamaKit-MacTests.xctest */ = {
+			isa = PBXReferenceProxy;
+			fileType = wrapper.cfbundle;
+			path = "LlamaKit-MacTests.xctest";
+			remoteRef = EAAC00EC1A560637004205FB /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		EAAC00F61A56063D004205FB /* Argo.framework */ = {
+			isa = PBXReferenceProxy;
+			fileType = wrapper.framework;
+			path = Argo.framework;
+			remoteRef = EAAC00F51A56063D004205FB /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		EAAC00F81A56063D004205FB /* ArgoTests.xctest */ = {
+			isa = PBXReferenceProxy;
+			fileType = wrapper.cfbundle;
+			path = ArgoTests.xctest;
+			remoteRef = EAAC00F71A56063D004205FB /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		EAAC00FA1A56063D004205FB /* Argo.framework */ = {
+			isa = PBXReferenceProxy;
+			fileType = wrapper.framework;
+			path = Argo.framework;
+			remoteRef = EAAC00F91A56063D004205FB /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		EAAC00FC1A56063D004205FB /* Argo-MacTests.xctest */ = {
+			isa = PBXReferenceProxy;
+			fileType = wrapper.cfbundle;
+			path = "Argo-MacTests.xctest";
+			remoteRef = EAAC00FB1A56063D004205FB /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+/* End PBXReferenceProxy section */
 
 /* Begin PBXResourcesBuildPhase section */
 		6093BD4F8059E842281C7002 /* Resources */ = {
@@ -348,36 +493,6 @@
 			shellPath = /bin/sh;
 			shellScript = "KEYWORDS=\"TODO:|FIXME:|\\?\\?\\?:|\\!\\!\\!:\"\nFILE_EXTENSIONS=\"h|m|mm|c|cpp\"\nfind -E \"${SRCROOT}\" -ipath \"${SRCROOT}/pods\" -prune -o \\( -regex \".*\\.($FILE_EXTENSIONS)$\" \\) -print0 | xargs -0 egrep --with-filename --line-number --only-matching \"($KEYWORDS).*\\$\" | perl -p -e \"s/($KEYWORDS)/ warning: \\$1/\"\n";
 		};
-		73BA219735DD41EF539158F9 /* Check Pods Manifest.lock */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputPaths = (
-			);
-			name = "Check Pods Manifest.lock";
-			outputPaths = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
-			showEnvVarsInLog = 0;
-		};
-		F26788BC5C9D1E90A13AA61B /* Copy Pods Resources */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputPaths = (
-			);
-			name = "Copy Pods Resources";
-			outputPaths = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-unit_tests/Pods-unit_tests-resources.sh\"\n";
-			showEnvVarsInLog = 0;
-		};
 /* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
@@ -390,8 +505,10 @@
 				EA395DE01A54829500EB607E /* TextureViewController.swift in Sources */,
 				91351D86BFD30C1614F53D0A /* LaunchScreen.xib in Sources */,
 				EA395DE41A54895500EB607E /* WhiteViewController.swift in Sources */,
+				EAAC00DC1A560467004205FB /* NetworkClient.swift in Sources */,
 				EA395DE21A5484DA00EB607E /* LightRoomClient.swift in Sources */,
 				EA395DDC1A545B4E00EB607E /* DiscoveryManager.swift in Sources */,
+				EAAC00DE1A5605DA004205FB /* JSONClient.swift in Sources */,
 				EA395DDE1A5480E700EB607E /* ImageCell.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -518,7 +635,6 @@
 		};
 		AB6FD5442F3751C5F152DD88 /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 3FA330DB413F15DFE1F58011 /* Pods-unit_tests.debug.xcconfig */;
 			buildSettings = {
 				BUNDLE_LOADER = "$(BUILT_PRODUCTS_DIR)/light-room-ios.app/light-room-ios";
 				FRAMEWORK_SEARCH_PATHS = (
@@ -537,7 +653,6 @@
 		};
 		B4E4817C14746627503E0BC9 /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 377B86AE55ED99036596B2A4 /* Pods-unit_tests.release.xcconfig */;
 			buildSettings = {
 				BUNDLE_LOADER = "$(BUILT_PRODUCTS_DIR)/light-room-ios.app/light-room-ios";
 				FRAMEWORK_SEARCH_PATHS = (

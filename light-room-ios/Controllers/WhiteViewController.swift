@@ -6,5 +6,6 @@ class WhiteViewController: UIViewController {
   @IBAction func levelChanged(sender: UISlider) {
     let value = Int(round(sender.value * 100))
     levelLabel?.text = "\(value)%"
+    LightRoomClient.sharedClient.setWhiteLevel(Double(sender.value)) { }
   }
 }
