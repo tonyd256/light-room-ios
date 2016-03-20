@@ -10,7 +10,6 @@ class DiscoveryViewController: UIViewController {
 
   private func found(host: String) {
     LightRoomClient.sharedClient.setHost(host)
-    println(host)
     manager.stopBrowsing()
     dismissViewControllerAnimated(true, .None)
   }

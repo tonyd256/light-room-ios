@@ -31,7 +31,7 @@ class LightRoomClient {
   }
 
   func setHost(host: String) {
-    NSURL(string: "\(host):3000").map {
+    NSURL(string: "http://\(host):3000").map {
       self.requestFactory = RequestFactory(host: $0)
     }
   }

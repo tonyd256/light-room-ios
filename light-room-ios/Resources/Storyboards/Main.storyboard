@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="6724" systemVersion="14B25" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="Q9I-L9-vsN">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="6254" systemVersion="14B25" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="Q9I-L9-vsN">
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6711"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6247"/>
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
     </dependencies>
     <scenes>
@@ -17,24 +17,26 @@
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="429" sectionHeaderHeight="22" sectionFooterHeight="22" translatesAutoresizingMaskIntoConstraints="NO" id="fOx-7G-vQb">
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="100" sectionHeaderHeight="22" sectionFooterHeight="22" translatesAutoresizingMaskIntoConstraints="NO" id="fOx-7G-vQb">
                                 <rect key="frame" x="0.0" y="0.0" width="600" height="551"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <prototypes>
-                                    <tableViewCell contentMode="scaleToFill" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="ImageCell" rowHeight="429" id="TI9-pO-XOd" customClass="ImageCell" customModule="light_room" customModuleProvider="target">
+                                    <tableViewCell contentMode="scaleToFill" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="ImageCell" rowHeight="100" id="TI9-pO-XOd" customClass="ImageCell" customModule="light_room" customModuleProvider="target">
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="TI9-pO-XOd" id="eea-aX-5oH">
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="nMJ-U1-yXT">
-                                                    <rect key="frame" x="0.0" y="0.0" width="600" height="429"/>
+                                                <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="nMJ-U1-yXT">
+                                                    <rect key="frame" x="250" y="-0.5" width="100" height="100.5"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="height" constant="100" id="MXz-wm-aO8"/>
+                                                        <constraint firstAttribute="width" constant="100" id="rFI-TE-LK2"/>
+                                                    </constraints>
                                                 </imageView>
                                             </subviews>
                                             <constraints>
-                                                <constraint firstItem="nMJ-U1-yXT" firstAttribute="leading" secondItem="eea-aX-5oH" secondAttribute="leading" id="SI9-6u-Tbc"/>
-                                                <constraint firstAttribute="trailing" secondItem="nMJ-U1-yXT" secondAttribute="trailing" id="Tpz-OW-6VP"/>
-                                                <constraint firstItem="nMJ-U1-yXT" firstAttribute="top" secondItem="eea-aX-5oH" secondAttribute="top" id="b0Z-Rn-JXg"/>
-                                                <constraint firstAttribute="bottom" secondItem="nMJ-U1-yXT" secondAttribute="bottom" id="tCl-V9-LfU"/>
+                                                <constraint firstAttribute="centerY" secondItem="nMJ-U1-yXT" secondAttribute="centerY" id="W4a-hK-t8T"/>
+                                                <constraint firstAttribute="centerX" secondItem="nMJ-U1-yXT" secondAttribute="centerX" id="fix-Js-mA9"/>
                                             </constraints>
                                         </tableViewCellContentView>
                                         <connections>
@@ -43,6 +45,10 @@
                                         </connections>
                                     </tableViewCell>
                                 </prototypes>
+                                <connections>
+                                    <outlet property="dataSource" destination="8vu-Lk-x1f" id="ucI-Ah-jVJ"/>
+                                    <outlet property="delegate" destination="8vu-Lk-x1f" id="6wM-6m-AeC"/>
+                                </connections>
                             </tableView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
